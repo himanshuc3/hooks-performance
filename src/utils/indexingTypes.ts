@@ -25,3 +25,9 @@ type Fruit = {
 };
 
 type MyRecord = { [FruitKey in "apple" | "cherry"]: Fruit };
+
+//NOTE:
+// 1. Record is built in type with same behavior in ts
+type MyRecord2<KeyType extends string, ValueType> = {
+  [Key in KeyType]: ValueType;
+};
